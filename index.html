@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Valentine</title>
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ffd6e8;
+  font-family: Arial, sans-serif;
+}
+
+.card {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  width: 320px;
+  position: relative;
+}
+
+h2 {
+  margin-bottom: 30px;
+}
+
+button {
+  padding: 12px 25px;
+  font-size: 16px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+#yes {
+  background: #ff4d6d;
+  color: white;
+}
+
+#no {
+  background: #ccc;
+  position: absolute;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <h2>Sakshee, will you be my Valentine? 💖</h2>
+  <button id="yes" onclick="yesClicked()">Yes</button>
+  <button id="no">No</button>
+</div>
+
+<script>
+const noBtn = document.getElementById("no");
+
+noBtn.addEventListener("mouseover", moveButton);
+noBtn.addEventListener("touchstart", moveButton);
+
+function moveButton() {
+  const x = Math.random() * 180 - 90;
+  const y = Math.random() * 180 - 90;
+  noBtn.style.transform = `translate(${x}px, ${y}px)`;
+}
+
+function yesClicked() {
+  document.body.innerHTML = `
+    <div style="display:flex;justify-content:center;align-items:center;height:100vh;background:#ff4d6d;">
+      <h1 style="color:white;font-size:36px;">Yay 💕 I knew it!</h1>
+    </div>
+  `;
+}
+</script>
+
+</body>
+</html>
